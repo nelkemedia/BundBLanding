@@ -17,7 +17,11 @@
       "Bash(curl -s -L https://unsplash.com/ -H 'Accept: text/html')",
       "Bash(curl -s https://html.duckduckgo.com/html/?q=unsplash+photo-1589829545856-d10d557cf95f -H 'User-Agent: Mozilla/5.0')",
       "Bash(curl -s \"https://api.unsplash.com/search/photos?query=traffic+road+cars&per_page=5&client_id=demo\")",
-      "Bash(npx @tailwindcss/cli -i src/input.css -o dist/output.css --minify)"
+      "Bash(npx @tailwindcss/cli -i src/input.css -o dist/output.css --minify)",
+      "Bash(npx @tailwindcss/cli -i src/input.css -o dist/output.css)",
+      "Bash(grep -E \"\\\\.\\(md|html|txt\\)$\")",
+      "Bash(curl -s -H \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap\")",
+      "Bash(curl -s -H \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Outfit:wght@300;400;500;600;700&display=swap\")"
     ]
   }
 }

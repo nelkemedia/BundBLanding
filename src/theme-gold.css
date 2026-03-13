@@ -1,0 +1,23 @@
+[data-theme="gold"] {
+  --color-navy-950: #0a1628;
+  --color-navy-900: #0f1d32;
+  --color-navy-800: #162a45;
+  --color-navy-700: #1e3a5c;
+  --color-navy-600: #264a73;
+  --color-gold-500: #c9a96e;
+  --color-gold-400: #d4b87a;
+  --color-gold-300: #e0ca93;
+  --color-gold-600: #b89555;
+  --color-warm-50: #f5f0e8;
+  --color-warm-100: #ede6db;
+  --color-warm-200: #d1c7b8;
+  --color-warm-300: #b5a999;
+  --color-slate-400: #8a7e70;
+  --font-display: "Playfair Display", "Georgia", serif;
+  --font-body: "Libre Franklin", "Helvetica Neue", sans-serif;
+}
+
+[data-theme="gold"] .glass-card {
+  background: rgba(15, 29, 50, 0.6);
+  border-color: rgba(201, 169, 110, 0.18);
+}
