@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.berweck.de)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:images.unsplash.com)",
+      "WebFetch(domain:www.google.com)",
+      "WebSearch",
+      "Bash(curl -s -L \"https://unsplash.com/photos/1589829545856-d10d557cf95f\" -o /dev/null -w \"%{http_code} %{url_effective}\")",
+      "Bash(curl -s -I https://images.unsplash.com/photo-1589829545856-d10d557cf95f)",
+      "Bash(curl -s -L -H 'Accept: text/html' https://unsplash.com/s/photos/d10d557cf95f)",
+      "Bash(curl -s -L -H 'Accept: text/html' https://unsplash.com/s/photos/37526070297c)",
+      "Bash(curl -s \"https://unsplash.com/napi/search/photos?query=d10d557cf95f&per_page=1\")",
+      "Bash(curl -s -L https://unsplash.com/ -H 'Accept: text/html')",
+      "Bash(curl -s https://html.duckduckgo.com/html/?q=unsplash+photo-1589829545856-d10d557cf95f -H 'User-Agent: Mozilla/5.0')",
+      "Bash(curl -s \"https://api.unsplash.com/search/photos?query=traffic+road+cars&per_page=5&client_id=demo\")",
+      "Bash(npx @tailwindcss/cli -i src/input.css -o dist/output.css --minify)"
+    ]
+  }
+}
