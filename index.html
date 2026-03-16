@@ -77,19 +77,20 @@
       </div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="lg:hidden fixed inset-0 top-20 bg-navy-950/98 backdrop-blur-xl -translate-x-full transition-transform duration-500 z-40">
-      <div class="flex flex-col items-center justify-center h-full gap-8">
-        <a href="#kanzlei" class="mobile-link font-display text-3xl text-warm-100 hover:text-gold-500 transition-colors">Kanzlei</a>
-        <a href="#rechtsgebiete" class="mobile-link font-display text-3xl text-warm-100 hover:text-gold-500 transition-colors">Rechtsgebiete</a>
-        <a href="#team" class="mobile-link font-display text-3xl text-warm-100 hover:text-gold-500 transition-colors">Team</a>
-        <a href="#kontakt" class="mobile-link font-display text-3xl text-warm-100 hover:text-gold-500 transition-colors">Kontakt</a>
-        <a href="tel:+497721200000" class="gold-shimmer text-white px-8 py-3 text-lg font-semibold tracking-wider uppercase rounded-sm mt-4">
-          Jetzt anrufen
-        </a>
-      </div>
-    </div>
   </nav>
+
+  <!-- Mobile Menu (outside nav to avoid backdrop-filter breaking fixed positioning) -->
+  <div id="mobile-menu" class="lg:hidden fixed inset-0 top-20 bg-navy-950/98 backdrop-blur-xl -translate-x-full transition-transform duration-500 z-40">
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+      <a href="#kanzlei" class="mobile-link font-display text-3xl text-warm-100 hover:text-gold-500 transition-colors">Kanzlei</a>
+      <a href="#rechtsgebiete" class="mobile-link font-display text-3xl text-warm-100 hover:text-gold-500 transition-colors">Rechtsgebiete</a>
+      <a href="#team" class="mobile-link font-display text-3xl text-warm-100 hover:text-gold-500 transition-colors">Team</a>
+      <a href="#kontakt" class="mobile-link font-display text-3xl text-warm-100 hover:text-gold-500 transition-colors">Kontakt</a>
+      <a href="tel:+497721200000" class="gold-shimmer text-white px-8 py-3 text-lg font-semibold tracking-wider uppercase rounded-sm mt-4">
+        Jetzt anrufen
+      </a>
+    </div>
+  </div>
 
   <!-- ═══════════════ HERO ═══════════════ -->
   <section class="relative min-h-screen flex items-center noise-overlay">
@@ -711,48 +712,9 @@
   </div>
 
   <!-- ═══════════════ THEME SWITCHER ═══════════════ -->
-  <div id="theme-switcher" class="fixed bottom-4 right-4 z-50 flex items-center gap-2 glass-card px-3 py-2 rounded-full lg:bottom-6 lg:right-6">
-    <button data-set-theme="default" class="theme-btn w-7 h-7 rounded-full border-2 border-warm-200/30 transition-all duration-300" style="background: linear-gradient(135deg, #1a1410, #a3302b);" title="Rot-Schema" aria-label="Rot-Schema"></button>
-    <button data-set-theme="gold" class="theme-btn w-7 h-7 rounded-full border-2 border-warm-200/30 transition-all duration-300" style="background: linear-gradient(135deg, #0a1628, #c9a96e);" title="Navy-Gold-Schema" aria-label="Navy-Gold-Schema"></button>
-    <button data-set-theme="light" class="theme-btn w-7 h-7 rounded-full border-2 border-warm-200/30 transition-all duration-300" style="background: linear-gradient(135deg, #f5f5f5, #d0d0d0, #e8e8e8);" title="Hell-Schema" aria-label="Hell-Schema"></button>
-  </div>
+  <script src="src/theme-switcher.js"></script>
 
   <script>
-    // ─── Theme Switcher ───
-    (function() {
-      const saved = localStorage.getItem('bb-theme');
-      if (saved && saved !== 'default') {
-        document.documentElement.setAttribute('data-theme', saved);
-      }
-
-      function markActive(activeTheme) {
-        document.querySelectorAll('[data-set-theme]').forEach(b => {
-          b.style.borderColor = '';
-          b.style.transform = '';
-        });
-        const active = document.querySelector('[data-set-theme="' + activeTheme + '"]');
-        if (active) {
-          active.style.borderColor = 'var(--color-gold-500)';
-          active.style.transform = 'scale(1.15)';
-        }
-      }
-
-      markActive(saved || 'default');
-
-      document.querySelectorAll('[data-set-theme]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const theme = btn.getAttribute('data-set-theme');
-          if (theme === 'default') {
-            document.documentElement.removeAttribute('data-theme');
-          } else {
-            document.documentElement.setAttribute('data-theme', theme);
-          }
-          localStorage.setItem('bb-theme', theme);
-          markActive(theme);
-        });
-      });
-    })();
-
     // ─── Scroll Reveal ───
     const revealElements = document.querySelectorAll('[data-reveal]');
     const revealObserver = new IntersectionObserver((entries) => {
